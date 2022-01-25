@@ -1,6 +1,7 @@
 var letterpairs;
 function getLetterpairs() {
-    let url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwxZV9pi9TY6zs6GITcmMjXPuneZZk0kWtR5BQaPYullUgfy8iedH9X3hoJyv12j7aT0FTyH6uZjrR/pub?gid=0&single=true&output=csv";
+    let url = document.getElementById("url")?.value ? document.getElementById("url").value :  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwxZV9pi9TY6zs6GITcmMjXPuneZZk0kWtR5BQaPYullUgfy8iedH9X3hoJyv12j7aT0FTyH6uZjrR/pub?gid=0&single=true&output=csv";
+    console.log(url)
     return fetch(url).then(res => res.text().then(letterpairs => {return letterpairs}).catch(err => console.log(err)));
 }
 

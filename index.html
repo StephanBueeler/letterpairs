@@ -32,6 +32,21 @@
         #word {
             margin-top: 200px;
         }
+
+        .url {
+            position: fixed;
+            bottom: 20px;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .url input {
+            width: 400px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -65,6 +80,10 @@
         <option value="X">X</option>
       </select>
     <p id="word"></p>
+    <div class="url">
+        <label for="url">Letterpair Spreadsheet URL:</label>
+        <input type="text" name="url" id="url" onchange="getLetterpairs()" value="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwxZV9pi9TY6zs6GITcmMjXPuneZZk0kWtR5BQaPYullUgfy8iedH9X3hoJyv12j7aT0FTyH6uZjrR/pub?gid=0&single=true&output=csv"/>
+    </div>
     <script>
         var currentLetter = document.cookie ? document.cookie : "ALL";
         document.getElementById("letter").value = currentLetter;
